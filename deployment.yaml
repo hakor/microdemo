@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: microdemo-deployment
+  labels:
+    app: microdemo
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: microdemo
+  template:
+    metadata:
+      labels:
+        app: microdemo
+    spec:
+      containers:
+      - name: microdemo
+        image: hakor/microdemo:latest
+        ports:
+        - containerPort: 8000
