@@ -9,7 +9,7 @@ RUN pip install flask==2.1.*
 COPY entry.py /
 
 # final configuration
-ENV FLAST_APP=microdemo
+ENV FLASK_APP=microdemo
 EXPOSE 8000
 
 #ADD . /src
