@@ -2,11 +2,17 @@ FROM ubuntu:22.04
 
 RUN apt update -y
 
-RUN apt install -y git telnet curl python3 python3-pip
+RUN apt install -y python3 python3-pip
+RUN pip install flask==2.1.*
 
-ADD . /src
-WORKDIR /src
+# install app 
+COPY entry.py /
 
-RUN pip install Flask
+# final configuration
+ENV FLAST_APP=microdemo
+EXPOSE 8000
 
-EXPOSE 5000
+#ADD . /src
+#WORKDIR /src
+
+CMD flask run --host 0.0.0.0 --port 8000
