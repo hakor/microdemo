@@ -14,5 +14,5 @@ def add(x, y):
 def subtract(x, y):
   return "%d" % (x-y)
 
-if __name__ == "__main__":
-  app.run(host='0.0.0.0')
+#if __name__ == "__main__":
+#  app.run(host='0.0.0.0')
